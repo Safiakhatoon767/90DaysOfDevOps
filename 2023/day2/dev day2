@@ -1,0 +1,81 @@
+BASICS LINUX COMMAND
+1.	WHAT IS LINUX  -  Linux is an os it is open source and  it is a multitasking and multiuser with powershell and multiple flavors. Flavours like ubuntu,centos,redhat,fedora,kalilinux etc.
+2.	LINUX FILE SYSTEM HIERARCHY -  in linux everything is represented as a file including a hardware program the files is stored in a directory and every directory contains a file with a tree structure that is called file system hierarchy.
+•	1./ (Root): Primary hierarchy root and root directory of the entire file system hierarchy. Every single file and directory starts from the root directory
+•	The only root user has the right to write under this directory
+
+2. /bin : Essential command binaries that need to be available in single-user mode; for all users, e.g., cat, ls, cp. 
+Contains binary executables Commands used by all the users of the system are located here e.g. ps, ls, ping, grep, cp 
+
+3. /boot : Boot loader files, e.g., kernels, initrd. 
+ 
+•	Kernel initrd, vmlinux, grub files are located under /boot
+
+4. /dev : Essential device files, e.g., /dev/null. 
+•	These include terminal devices, usb, or any device attached to the system.
+
+5. /etc : Host-specific system-wide configuration files.
+
+6. /home : Users’ home directories, containing saved files, personal settings, etc.
+•	Home directories for all users to store their personal files.
+
+7. /lib : Libraries essential for the binaries in /bin/ and /sbin/.
+
+8. /media : Temporary mount directory for removable devices.
+
+
+9. /mnt : Temporarily mounted filesystems.
+
+10. /opt : Optional application software packages.
+
+•	11. /sbin : Essential system binaries, e.g., fsck, init, route. Just like /bin, /sbin also contains binary executables.
+
+•	Example: iptables, reboot, fdisk, ifconfig, swapon
+ 
+12. /tmp : Temporary files. Often not preserved between system reboots, and may be severely size restricted.
+•	Directory that contains temporary files created by system and users.
+•	Files under this directory are deleted when system is rebooted.
+
+13. /usr : Secondary hierarchy for read-only user data; contains the majority of (multi-)user utilities and applications. 
+•	/usr/bin contains binary files for user programs. If you can’t find a user binary under /bin, look under /usr/bin. For example: at, awk, cc, less, scp
+
+Linux Basics Command
+
+1.	ls - The most frequently used command in Linux to list directories
+2.	pwd - Print working directory command in Linux
+3.	cd - Linux command to navigate through directories
+4.	mkdir - Command used to create directories in Linux
+5.	mv - Move or rename files in Linux
+6.	cp - Similar usage as mv but for copying files in Linux
+7.	rm - Delete files or directories
+8.	touch - Create blank/empty files
+9.	ln - Create symbolic links (shortcuts) to other files
+10.	cat - Display file contents on the terminal
+11.	clear - Clear the terminal display
+12.	echo - Print any text that follows the command
+13.	less - Linux command to display paged outputs in the terminal
+14.	man - Access manual pages for all Linux commands
+15.	uname - Linux command to get basic information about the OS
+16.	whoami - Get the active username
+17.	tar - Command to extract and compress files in Linux
+18.	grep - Search for a string within an output
+19.	head - Return the specified number of lines from the top
+20.	tail - Return the specified number of lines from the bottom
+21.	diff - Find the difference between two files
+22.	export - Export environment variables in Linux
+23.	zip - Zip files in Linux
+24.	unzip - Unzip files in Linux
+25.	ssh - Secure Shell command in Linux
+26.	service - Linux command to start and stop services
+27.	ps - Display active processes
+28.	kill and killall - Kill active processes by process ID or name
+29.	df - Display disk filesystem information
+30.	mount - Mount file systems in Linux
+31.	chmod - Command to change file permissions
+32.	chown - Command for granting ownership of files or folders
+33.	ifconfig - Display network interfaces and IP addresses
+34.	wget - Direct download files from the internet
+35.	top - View active processes live with their system usage
+36.	useradd and usermod - Add new user or change existing users data
+37.	passwd - Create or update passwords for existing users
+38.	history -  used to view the previously executed command. 

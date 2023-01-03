@@ -1,0 +1,134 @@
+Day 3 Task
+BASICS COMMAND OF LINUX
+ls - The ls is the list command in Linux. It will show the full list or content of your directory. 
+ls -a -  you can see the whole list of files, including the hidden files.
+
+ls -l  - The ls command will only display the files.
+
+ls -d */ - If you only want to display the sub-directories excluding all other files, you can 
+use this command
+
+ls -g - If you don't want to display the owner information in your list
+
+ls -lg - f you don't want to display the group information in your list 
+ls --color=[VALUE]  -  This command is used to colorize and decolorize the list.
+ls ~ -it shows the contents of the home directory.
+ls ../ - This command contains the list of the parent directory.
+sudo - The Linux sudo command stands for Super User Do.
+Sudo -V -  It stands for version.
+
+sudo -l -  It stands for list.
+
+sudo -h - The h stands for help in this option.
+
+pwd stands for Print Working Directory. It prints the path of the working directory, starting from the root.
+
+$cat filename
+It will show content of given filename
+$cat file1 file2
+This will show the content of file1 and file2
+$cat -n filename
+It will show content with line number
+$ cat > newfile
+Will create a file named newfile
+$cat [filename-whose-contents-is-to-be-copied] > [destination-filename]
+The content will be copied in destination file
+$cat file1 >> file2
+Will append the contents of one file to the end of another file
+$tac filename
+Will display content in reverse order
+$cat "filename1" "filename2" "filename3" > "merged_filename"
+Will merge the contents of file in respective order and will insert that content in "merged_filename".
+$cat *.txt
+Will show the content of all text files present in the folder.
+$cat >> safia.txt
+The newly added text.
+Will append the text "The newly added text." to the end of the file.
+1.	To view what's written in a file.
+cat -  This is the simplest and perhaps the most popular command to view a file in Linux.
+nl -  The nl command is almost like the cat command. The only difference is that it prepends line numbers while displaying the text in the terminal.
+less - Less command views the file one page at a time. 
+head  - head command is another way of viewing text file but with a slight difference. The head command displays the first 10 lines of a text file by default.
+tail - it is similar and yet opposite to the head command. While head command displays file from the beginning, the tail command displays file from the end.
+
+2.	To change the access permissions of files.
+
+•	chmod +rwx filename to add permissions
+•	chmod -rwx directoryname to remove permissions. 
+•	chmod +x filename to allow executable permissions.
+•	chmod -wx filename to take out write and executable permissions.
+3.	To check which commands you have run till now.
+history - command is used to view the previously executed command.
+
+4.	To remove a directory/ Folder.
+
+•	Use the rmdir or rm -d command to remove empty directories.
+•	Use the rm -r command to remove non-empty directories.
+5.	To create a fruits.txt file and to view the content.
+vim fruits.txt
+apple
+banana
+mango
+pineapple
+guava
+:wq
+6.Add content in devops.txt (One in each line) - Apple, Mango, Banana, Cherry, Kiwi, Orange, Guava.
+vim devops.txt
+apple
+mango
+banana
+cherry
+kiwi
+orange
+guava
+cat -n devops.txt
+7.To Show only top three fruits from the file.
+head -3 fruits.txt
+apple
+mango
+banana
+8.To Show only bottom three fruits from the file.
+tail -3 fruits.txt
+mango
+pineapple
+guava
+9.To create another file Colors.txt and to view the content.
+vim colors.txt
+red
+pink
+blue
+orange
+cat colors.txt
+red
+pink
+blue
+orange
+10.Add content in Colors.txt (One in each line) - Red, Pink, White, Black, Blue, Orange, Purple, Grey.
+vim colors.txt
+ Red
+Pink
+White
+ Black
+Blue
+Orange
+Purple 
+ Grey
+11.To find the difference between fruits.txt and Colors.txt file.
+diff fruits.txt colors.txt
+ < apple
+< banana
+< mango
+< pineapple
+< guava
+---
+>  Red
+> Pink
+> White
+>  Black
+> Blue
+> Orange
+> Purple 
+>  Grey
+
+:wq
+

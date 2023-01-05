@@ -1,0 +1,209 @@
+1.You have to do the same using Shell Script i.e using either Loops or command with start day and end day variables using arguments -
+
+So Write a bash script to create directories. sh that when the script is executed with three given arguments (one is the directory name and second is the start number of directories and the third is the end number of directories ) it creates a specified number of directories with a dynamic directory name.
+
+Example 1: When the script is executed as
+
+./createDirectories.sh day 1 90
+
+then it creates 90 directories as day1 day2 day3 .... day90
+
+Example 2: When the script is executed as
+
+./createdirectories.sh Movie 20 50 then it creates 50 directories as Movie20 Movie21 Movie23 ...Movie50
+
+vim createdirectories. sh
+
+#!/bin/bash
+
+for (( i=1;i<=$2;i++))
+
+ do
+
+ mkdir $1-$i
+
+ done
+
+ls
+
+shift+:wq
+
+chmod 700 createdirectories.sh
+
+./createdirectories Day 90
+
+Day-1 Day-14 Day-2 Day-25 Day-30 Day-36 Day-41 Day-47 Day-52 Day-58 Day-63 Day-69 Day-74 Day-8 Day-85 Day-90 Day-1 Day-15 Day-20 Day-26 Day-31 Day-37 Day-42 Day-48 Day-53 Day-59 Day-64 Day-7 Day-75 Day-80 Day-86  Day-10 Day-16 Day-21 Day-27 Day-32 Day-38 Day-43 Day-49 Day-54 Day-6 Day-65 Day-70 Day-76 Day-81 Day-87 Day-11 Day-17 Day-22 Day-28 Day-33 Day-39 Day-44 Day-5 Day-55 Day-60 Day-66 Day-71 Day-77 Day-82 Day-88 Day-12 Day-18 Day-23 Day-29 Day-34 Day-4 Day-45 Day-50 Day-56 Day-61 Day-67 Day-72 Day-78 Day-83 Day-89 Day-13 Day-19 Day-24 Day-3 Day-35 Day-40 Day-46 Day-51 Day-57 Day-62 Day-68 Day-73 Day-79 Day-84 Day-9
+
+EXAMPLE 2:
+
+./createdirectories.sh Movie 20 50
+
+Movie-1 Movie-13 Movie-17 Movie-20 Movie-24 Movie-28 Movie-31 Movie-35 Movie-39 Movie-42 Movie-46 Movie-5 Movie-8 Movie-10 Movie-14 Movie-18 Movie-21 Movie-25 Movie-29 Movie-32 Movie-36 Movie-4 Movie-43 Movie-47 Movie-50 Movie-9 Movie-11 Movie-15 Movie-19 Movie-22 Movie-26 Movie-3 Movie-33 Movie-37 Movie-40 Movie-44 Movie-48 Movie-6 Movie-12 Movie-16 Movie-2 Movie-23 Movie-27 Movie-30 Movie-34 Movie-38 Movie-41 Movie-45 Movie-49 Movie-7
+
+2. Create a Script to back up all your work done till now.
+
+#!/bin/bash
+
+alert=90 backup_date=$(date +'%m/%d/%y %H:%M:%S')
+
+df -H | awk '{print$5 " " $1}' | while read output;
+
+do
+
+#echo "Disk Detail: $output"
+
+usage=$(echo $output |awk '{print $1}' | cut -d'%' -f1)
+
+file_sys=$(echo $output | awk '{print $2}')
+
+#echo $usage
+
+if [ $usage -ge $alert ]
+
+then
+echo "CRITICAL for $file_sys on $backup_date"
+
+fi
+done
+
+3. Read About Cron and Crontab, to automate the backup Script
+
+What is crontab?
+
+crone tab is nothing it is a simple file where write a set of command 
+
+Cron Table Format
+
+*    *    *   *    *  Command_to_execute
+|    |    |    |   |       
+|    |    |    |    Day of the Week ( 0 - 6 ) ( Sunday = 0 )
+|    |    |    |
+|    |    |    Month ( 1 - 12 )
+|    |    |
+|    |    Day of Month ( 1 - 31 )
+|    |
+|    Hour ( 0 - 23 )
+|
+Min ( 0 - 59 )
+
+
+crontab -l - To check the crone tab
+
+crontab -e - open the crontab terminal
+
+date - it is used to check the date 
+
+07:39:34
+
+Creating your first-ever Crontab
+
+minutes         hour           Day of Month                   Month          Day of the week                    05            08                          *                                 *                    *
+
+echo " this is my first cron job" > /home/ubuntu/test_cron_first.sh
+
+Create a Script to backup
+
+vi check_disk.sh
+
+#!/bin/bash
+
+alert=90 backup_date=$(date +'%m/%d/%y %H:%M:%S')
+
+df -H | awk '{print$5 " " $1}' | while read output;
+
+do
+
+#echo "Disk Detail: $output"
+
+usage=$(echo $output |awk '{print $1}' | cut -d'%' -f1)
+
+file_sys=$(echo $output | awk '{print $2}')
+
+#echo $usage
+
+if [ $usage -ge $alert ]
+
+then
+echo "CRITICAL for $file_sys on $backup_date"
+
+fi
+done
+
+shift +:wq
+
+chmod 700 check_disk.sh
+
+./chech_disk.sh
+
+crontab -e 
+
+***** bash /home/ubuntu/scripts/check_disk.sh >> /home/ubuntu/log.txt
+
+the crontab is running on the background
+
+4.Read about User Management 
+
+User management includes everything from creating a user to deleting a user on your system.
+
+To create a user account
+
+#useradd Safia
+
+To check user account properties
+
+#sudo cat /etc/passwd
+
+To create a user account password
+
+#passwd Safia
+
+For switching user account
+
+su Safia
+
+For logout from the user account
+
+exit
+
+To delete a user account
+
+userdel Safia
+
+Group Management
+
+A group is a collection of users' accounts Users can be listed in different groups. Group allow us to set permission on the group level.
+
+To add a group account
+
+#groupadd dev_safia
+
+To check group account property
+
+#sudo cat  /etc/group
+
+To delete the group account
+
+groupdel dev_safia
+
+To add a single member to a group
+
+#gpasswd -a Safia dev_safia
+
+To add multiple members to a group
+
+#gpasswd -M safia,puja,jyoti,najiya dev_safia
+
+5.Create 2 users and just display their Usernames
+
+#sudo useradd safia
+
+#sudo gpasswd safia
+
+#sudo useradd Jyoti
+
+#sudo gpasswd Jyoti
+
+#sudo cat /etc/passwd
+
+************************************* END **************************************
+

@@ -16,21 +16,17 @@ vim createdirectories. sh
 
 #!/bin/bash
 
-for (( i=1;i<=$2;i++))
+start=$2
 
- do
+stop=$3
 
- mkdir $1-$i
-
- done
-
-ls
+mkdir $(eval echo $1{$start..$stop})
 
 shift+:wq
 
 chmod 700 createdirectories.sh
 
-./createdirectories Day 90
+./createdirectories Day 1 90
 
 Day-1 Day-14 Day-2 Day-25 Day-30 Day-36 Day-41 Day-47 Day-52 Day-58 Day-63 Day-69 Day-74 Day-8 Day-85 Day-90 Day-1 Day-15 Day-20 Day-26 Day-31 Day-37 Day-42 Day-48 Day-53 Day-59 Day-64 Day-7 Day-75 Day-80 Day-86  Day-10 Day-16 Day-21 Day-27 Day-32 Day-38 Day-43 Day-49 Day-54 Day-6 Day-65 Day-70 Day-76 Day-81 Day-87 Day-11 Day-17 Day-22 Day-28 Day-33 Day-39 Day-44 Day-5 Day-55 Day-60 Day-66 Day-71 Day-77 Day-82 Day-88 Day-12 Day-18 Day-23 Day-29 Day-34 Day-4 Day-45 Day-50 Day-56 Day-61 Day-67 Day-72 Day-78 Day-83 Day-89 Day-13 Day-19 Day-24 Day-3 Day-35 Day-40 Day-46 Day-51 Day-57 Day-62 Day-68 Day-73 Day-79 Day-84 Day-9
 

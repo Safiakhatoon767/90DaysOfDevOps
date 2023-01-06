@@ -1,0 +1,84 @@
+Types of permissions
+r - read 4
+w - write 2
+x - execute 1
+Permission (rwx) levels
+u - yourself (the current user)
+g - group to which the user belong to
+o - others (outside the group)
+a - all
+How to see the permissions?
+ls -ltr
+find group information
+id <user_name>
+How to change the permission?
+chmod u+r <file_name> (for adding permission)
+chmod u-r <file_name> (for removing permission)
+chmod ugo+r <file_name>
+chmod ugo-r <file_name>
+chmod a+rwx <file_name> (adding the permission for all)
+chmod a-rwx <file_name> (for removing all the permission)
+chmod g+rw <file_name> (for adding permission to group)
+Note: one more important thing is you can't change other user permission it means when u logged in to Safia user but change the permission of the root user then you can't but the root user can change all permission of other users but normal users can't.
+
+chmod Numeric Mode
+Ex : chmod 756 <file_name>
+so here,
+The first numeric number 7 shows the user
+The second numeric number 5 shows the group
+The Third numeric number 6 shows the other user
+Number Permission Type Symbol
+0 No permission ---
+
+1 Execute --x
+
+2 write -w-
+
+3 Execute + write -wx
+
+4 read r--
+
+5 read + execute r-x
+
+6 Read + Write rw-
+
+7 Read + Write + Execute rwx
+
+Access Control List (ACL)
+What is ACL?
+
+It allows you to give a more specific set of permissions to a file or directory without changing the base ownership and permission.
+
+Commands : setfacl & getfacl
+
+getfacl:- The getfacl command displays the access permissions of files and directories with file name, owner, group and the ACLs (Access Control List).
+
+getfacl<file_name>
+setfacl
+For adding permission for the user
+setfacl -m u:user_name:rwx <target_file>
+For adding the permission for group
+setfacl -m:g:group_name:rwx <target_file>
+To remove a specific entry
+setfacl -x u:user_name:rwx <target_file>
+To remove all entries
+setfacl -b <target_file>
+where,
+
+-m - modification
+
+-x - remove permission
+
+-b - remove all entries
+
+For adding permissions for the user in all the files inside a folder - (it means only one user to permit to access the file/folder)
+setfacl -Rm "entry" <targetfile/folder>
+ex : setfacl -Rm u:safia:rwx my_folder
+File Ownership Commands
+chown: To change user ownership.
+
+chgrp: To change group ownership.
+
+sudo chown -c Safia test_file
+sudo chgrp -c Dev_Safia test_file
+******************END*********************

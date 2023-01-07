@@ -1,0 +1,154 @@
+You have to install docker and Jenkins in your system from your terminal using package managers
+INSTALL DOCKER:
+
+Open the terminal on Ubuntu.
+Remove any Docker files that are running in the system, using the following command
+
+$ sudo apt-get remove docker docker-engine docker.io
+
+Check if the system is up-to-date using the following command
+
+$ sudo apt-get update
+
+Install Docker using the following command
+
+$ sudo apt install docker.io
+
+Install all the dependency packages using the following command
+
+$ sudo snap install docker
+
+Before testing Docker, check the version installed using the following command
+
+$ docker --version
+
+Pull an image from the Docker hub using the following command
+
+$ sudo docker run hello-world
+
+Here,  hello-world  is the docker image present on the Docker hub.
+
+Check if the docker image has been pulled and is present in your system using the following command
+
+$ sudo docker images
+
+To display all the containers pulled, use the following command
+
+$ sudo docker ps -a
+
+To check for containers in a running state, use the following command
+
+$ sudo docker ps
+
+INSTALL JENKINS
+
+Step - 1 (Install Java)
+Update your system
+sudo apt update
+
+2.Install java
+
+sudo apt install open-jdk-11-jre
+
+3.Validate Installation
+
+java -version
+
+STEP-2 INSTALL JENKINS
+
+4.Just copy these commands and paste them onto your terminal.
+
+curl -fsSL https://pkg.jenkins.io/debian/jenkins.io.key | sudo tee \ /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \ https://pkg.jenkins.io/debian binary/ | sudo tee \ /etc/apt/sources.list.d/jenkins.list > /dev/null
+
+sudo apt-get update
+
+sudo apt-get install jenkins
+
+Step -3 Start jenkins
+
+sudo systemctl enable jenkins
+
+sudo systemctl start jenkins
+
+sudo systemctl status jenkins
+
+check the status of docker service in your system (make sure you completed above tasks, else docker won't be installed)
+systemctl status docker
+
+OUTPUT:
+
+docker.service - Docker Application Container Engine Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled) Active: active (running) since Sat 2023-01-07 15:22:45 UTC; 44min ago TriggeredBy: ● docker.socket Docs: docs.docker.com Main PID: 7258 (dockerd) Tasks: 7 Memory: 33.1M CPU: 539ms CGroup: /system.slice/docker.service └─7258 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+
+stop the service jenkins and post before and after screenshots
+sudo systemctl stop jenkins
+sudo systemctl status jenkins
+OUTPUT:
+○ jenkins.service - Jenkins Continuous Integration Server Loaded: loaded (/lib/systemd/system/jenkins.service; enabled; vendor preset: enabled) Active: inactive (dead) since Sat 2023-01-07 16:14:48 UTC; 1min 27s ago Process: 5310 ExecStart=/usr/bin/jenkins (code=exited, status=143) Main PID: 5310 (code=exited, status=143) Status: "Jenkins stopped" CPU: 49.021s
+
+Jan 07 15:17:03 ip-172-31-86-78 jenkins[5310]: ************************************************************* Jan 07 15:17:37 ip-172-31-86-78 jenkins[5310]: 2023-01-07 15:17:37.745+0000 [id=29] INFO jenkins.InitReactorRunner$1#onAttained: Co> Jan 07 15:17:37 ip-172-31-86-78 jenkins[5310]: 2023-01-07 15:17:37.786+0000 [id=22] INFO hudson.lifecycle.Lifecycle#onReady: Jenkin> Jan 07 15:17:37 ip-172-31-86-78 systemd[1]: Started Jenkins Continuous Integration Server. Jan 07 15:17:37 ip-172-31-86-78 jenkins[5310]: 2023-01-07 15:17:37.935+0000 [id=44] INFO h.m.DownloadService$Downloadable#load: Obt> Jan 07 15:17:37 ip-172-31-86-78 jenkins[5310]: 2023-01-07 15:17:37.936+0000 [id=44] INFO hudson.util.Retrier#start: Performed the a> Jan 07 16:14:48 ip-172-31-86-78 systemd[1]: Stopping Jenkins Continuous Integration Server... Jan 07 16:14:48 ip-172-31-86-78 systemd[1]: jenkins.service: Deactivated successfully. Jan 07 16:14:48 ip-172-31-86-78 systemd[1]: Stopped Jenkins Continuous Integration Server. Jan 07 16:14:48 ip-172-31-86-78 systemd[1]: jenkins.service: Consumed 49.021s CPU time.
+
+read about the commands systemctl vs service
+systemctl:
+The systemctl command manages both system and service configuration.
+
+Start and Stop Service
+sudo systemctl start docker.service
+
+sudo systemctl stop docker.service
+
+Start: To start stopped service
+
+Restart: To stop running the service
+
+Restart or Reload Service
+sudo systemctl reload docker.service
+
+sudo systemctl restart docker.service
+
+Reload: Used to reload the configuration of a running service
+
+Restart: Used to restart (Stop/Start) a running service
+
+Status of Service
+sudo systemctl status docker.service
+
+Status: Used to check current status of a service
+
+Enable or Disable Service
+sudo systemctl enable docker.service
+
+sudo systemctl disable docker.service
+
+Enable: Used to enable service to start on system boot
+Disable: Used to disable service to not to start on system boot
+
+Check Service is Enabled or Disabled
+sudo systemctl is-active docker.service
+
+sudo systemctl is-enabled docker.service
+
+is-active: Used to check if service current service status
+
+is-enabled: Used to check if service is enabled to start on system boot
+
+service:
+The service command starts,stop and restart a daemon.
+
+1. To status of a program:
+service docker status
+2. To start a service:
+service docker start
+3. To stop a service:
+service docker stop
+4. To restart a service:
+service docker restart
+5. To see the status for all the programs:
+service --status-all
+6.To see the help:
+service -h
+service --help
+7.To see the version:
+service --version
+~~~~~~End***

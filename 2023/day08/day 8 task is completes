@@ -1,0 +1,37 @@
+1. Create a new repository on GitHub and clone it to your local machine
+step 1:you create a repo in GitHub
+
+Safia blog
+
+step 2: and then create your local same as
+
+mkdir safia_blog
+
+step 3: and again go to your GitHub and copy the HTTPS code
+
+git clone https://github.com/Safiakhatoon767/safia_blog.git
+
+ls
+
+safia_blog
+
+cd safia_blog/
+
+Make some changes to a file in the repository and commit them to the repository using Git
+vi devops.txt
+git status
+git add devops.txt
+git commit -m "add this"
+ git remote -v 
+ git push origin master
+ 
+Push the changes back to the repository on GitHub
+vi devops.txt
+git status
+git add devops.txt
+git commit -m "add this"
+ git remote -v 
+ git push origin master
+
+
+******************* End **********

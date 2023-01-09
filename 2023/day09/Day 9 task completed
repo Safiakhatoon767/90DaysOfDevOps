@@ -1,0 +1,97 @@
+what is Git and why is it important?
+Git is a version control system. It maintains a history of all changes made to the code. The changes are stored in a special database called “repository”, also known as “repo”.
+
+it is important because of Tracking the changes and updates. We can see who made which changes. Git also provides when and why a change was made.
+
+Allowing them to work collaboratively. Software development projects usually require many people to work together. Git provides developers with a systematic way of doing that. Thus, the developers focus on the project instead of extensive communication sessions between the other developers.
+2. What is the difference Between Main Branch and Master Branch??
+main or master is the default branch when you create a repository. GitHub now uses main as its default branch while others still use master.
+
+Earlier, Microsoft GitHub also has mastered as their default branch, but some peoples at Microsoft think that the master name is kind of similar to slavery, which is offensive according to Microsoft. Hence they changed its name to main.
+
+3.Can you explain the difference between Git and GitHub?
+Git :
+Git is a software.
+
+Git is a command-line tool
+
+Git is installed locally on the system
+
+Git is maintained by Linux.
+
+Git is open-source licensed.
+
+GitHub:
+1.GitHub is a service.
+
+2.GitHub is a graphical user interface.
+
+3.GitHub is hosted on the web
+
+4.GitHub is maintained by Microsoft.
+
+5.GitHub includes a free tier and a pay-for-use tier.
+
+4. How do you create a new repository on GitHub?
+step 1:
+In the upper-right corner of any page, use the drop-down menu, and select New repository.
+
+
+
+step 2:
+Type a short, memorable name for your repository. For example, "Dev_Safia".
+
+
+step 3:
+Optionally, add a description of your repository. For example, "My first repo on gitHub."
+
+
+step 4: Choose repository visibility. For more information, see "About repositories."
+
+
+step 5: Select Initialize this repository with a README.
+
+
+step 6:Click Create repository.
+
+
+What is the difference between local & remote repositories? How to connect locally remotely?
+The local repository is a Git repository that is stored on your computer.
+
+The remote repository is a Git repository that is stored on some remote computer.
+
+
+
+Set your user name and email address, which will be associated with your commits.
+
+git config --global user.name "safia"
+git config --global user.email "safiakhatoonami@gmail.com"
+Create a repository named "Devops" on GitHub
+
+
+Connect your local repository to the repository on GitHub.
+git remote add origin https://github.com/Safiakhatoon767/safia-blog-1.git
+
+git remote -v
+
+origin https://github.com/Safiakhatoon767/safia-blog-1.git (fetch)
+
+origin https://github.com/Safiakhatoon767/safia-blog-1.git (push)
+
+Create a new file in Devops/Git/Day-02.txt& add some content to it
+mkdir -p  Devops/Git/Day-02.txt
+cd Devops
+cd Git
+cd Day-02.txt
+vim safia.txt
+
+Push your local commits to the repository on GitHub
+
+git push origin master
+
+
+
+
+
+
+*********END*********

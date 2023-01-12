@@ -1,0 +1,59 @@
+Explain in your own words and examples, what is Shell Scripting for DevOps.
+
+Shell Scripting is an open-source operating system.
+
+shell scripts consist of a set of commands to perform a task.
+
+All the commands execute sequentially
+
+we can use shell scripting for automation
+
+Example :- #!/bin/bash
+
+echo "Hello Safia"
+
+What is #!/bin/bash? can we write #!/bin/sh as well?
+
+This is known as shebang in Unix.
+
+In the scripting language, we denote interpreter as #!/bin/sh It was one most widely supported by other shells like bash (free/open), kash (not free).
+
+Bash (Bourne again shell) is a shell replacement for the Bourne shell. Bash is a superset of sh.#!/bin/bash
+
+yes we can use #!/bin/sh instead of #!/bin/bash
+
+Write a Shell Script which prints I will complete #90DaysOofDevOps challenge
+
+#!/bin/bash
+
+echo " I will complete#90DaysOofDevOps challenge "
+
+Write a Shell Script to take user input, input from arguments and print the variables.
+
+#!/bin/bash
+
+echo " hello ${name}, please enter your age"
+
+read age
+
+echo "My age is $(age)"
+
+Write an Example of If else in Shell Scripting by comparing 2 numbers
+
+#!/bin/bash
+
+a=30
+
+b=7
+
+if [ $a -ge $b ]
+
+then
+
+echo "The variable 'a' is greater than the variable 'b'."
+
+else
+
+echo "The variable 'b' is greater than the variable 'a'."
+
+fi

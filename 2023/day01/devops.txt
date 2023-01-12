@@ -4,5 +4,5 @@ These are the articles which I refered to,
 
 formal defination   :   "DevOps is the union of people, process, and products to enable continuous delivery of value to our end users."
 
-The main goal of DEVOPS is to shorten cycle time. Start with the release pipeline. How long does it take to deploy a change of one line of code or configuration.
+The main goal of DevOps is to shorten cycle time. Start with the release pipeline. How long does it take to deploy a change of one line of code or configuration.
 

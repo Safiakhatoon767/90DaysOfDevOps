@@ -38,4 +38,4 @@ mkdir A B C D                  #make multiple directories at the same time
 mkdir /home/user/Mydirectory   # make a new folder in a specific location
 
 mkdir -p  A/B/C/D              # make a nested directory
-```
+'``

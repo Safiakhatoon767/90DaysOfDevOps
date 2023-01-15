@@ -1,0 +1,48 @@
+What is Python?
+
+Python is a Open source, general purpose, high level, and object-oriented programming language.
+
+It was created by Guido van Rossum
+
+Python consists of vast libraries and various frameworks like Django,Tensorflow, Flask, Pandas, Keras etc.
+
+How to Install Python?
+
+You can install Python in your System whether it is window, MacOS, ubuntu, centos etc. Below are the links for the installation:
+
+Windows Installation
+
+Ubuntu: apt-get install python3.6
+
+Task1:
+Install Python in your respective OS, and check the version.
+
+sudo apt-get install python3.6
+
+python3 -V
+
+Python 3.10.6
+
+Read about different Data Types in Python.
+
+Variables can store data of different types, and different types can do different things.
+
+Python has the following data types built-in by default, in these categories:
+
+Integers: Represent whole numbers, e.g. 0,1, 2, 300, -1, -2.
+
+Floats: Represent decimal numbers, e.g. 1.545, 2.5, 3.14.
+
+Strings: Represent sequences of characters, e.g. "hello world".
+
+Booleans: Represent true or false values, e.g. True, False.
+
+Lists: A collection of items in a particular order.
+
+Tuples: A collection of items in a particular order, but unlike lists, tuples are immutable.
+
+Dictionaries: A collection of key-value pairs.
+
+Sets: A collection of unique items.
+
+**********End***********

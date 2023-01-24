@@ -1,0 +1,97 @@
+List All Docker Images
+
+docker images -a
+
+List All Running Docker Containers
+
+docker ps
+
+
+List All Docker Containers
+
+docker ps -a
+
+
+Start a Docker Container
+
+docker start <container name>
+
+Stop a Docker Container
+
+docker stop <container name>
+
+View the Logs of a Running Docker Container
+
+docker logs <container name>
+
+Delete All Docker Containers
+
+Use -f option to nuke the running containers too.
+
+docker rm $(docker ps -a -q)
+
+Remove a Docker Image
+
+docker rmi <image name>
+
+Delete All Docker Images
+
+docker rmi $(docker images -q)
+
+SSH Into a Running Docker Container
+
+Okay not technically SSH, but this will give you a bash shell in the container.
+
+sudo docker exec -it <container name> bash
+
+Use Docker Compose to Build Containers
+
+docker-compose build
+
+Use Docker Compose to Start a Group of Containers
+
+Use this command from the directory of your docker-compose.yml file.
+
+docker-compose up -d
+
+This will tell Docker to fetch the latest version of the container from the repo, and not use the local cache.
+
+docker-compose up -d --force-recreate
+
+This can be problematic if you’re doing CI builds with Jenkins and pushing Docker images to another host, or using for CI testing. I was deploying a Spring Boot Web Application from Jekins, and found the Docker container was not getting refreshed with the latest Spring Boot artifact.
+
+#stop docker containers,
+
+and rebuild
+
+docker-compose stop -t
+
+docker-compose rm -f
+
+docker-compose pull
+
+docker-compose build
+
+docker-compose up -d
+
+Follow the Logs of Running Docker Containers With Docker Compose
+
+docker-compose logs -f
+
+Save a Running Docker Container as an Image
+
+docker commit <image name> <name for image>
+
+Follow the Logs of One Container Running Under Docker Compose
+
+docker-compose logs pump <name>
+
+# Setup Docker in EC2:-
+
+sudo apt-get update
+
+sudo apt-get install docker.io
+
+sudo usermod -a -G docker $USER
+
+sudo reboot

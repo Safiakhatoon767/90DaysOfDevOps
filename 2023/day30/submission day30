@@ -1,0 +1,79 @@
+What is Kubernetes? Write in your own words and why do we call it k8s?
+
+Kubernetes, or K8s for short, is an open-source container-orchestration tool designed by Google. It's used for bundling and managing clusters of containerized applications K8s as an abbreviation results from counting the eight letters between the "K" and the "s".
+
+What are the benefits of using k8s?
+
+1. Kubernetes is beneficial for your business productivity:
+
+One of the best things about using Kubernetes is that the platform helps you drive better business productivity.
+
+2. Kubernetes has Multi-cloud Capability:
+
+The other great thing about using Kubernetes is that you can finally ditch the conventions and benefit from the multi-cloud capability.
+
+3. Kubernetes Runs Your Applications With Better Stability
+
+The stability of an application will make the difference between a performant and a non-performant application. Fortunately, this will be the least of concerns for people using Kubernetes as the platform offers unmatched stability.
+
+4. Kubernetes Is Open Source And Free
+
+Kubernetes is free and open-source software that operates with the support of an extensive community. This means you are free to use Kubernetes however you want. You don't need to pay for a software license, and you can even edit Kubernetes' code to better fit your needs.
+
+Explain the architecture of Kubernetes,
+
+The architecture of Kubernetes actually follows the client-server architecture. It consists of the following two main components:
+
+Master Node (Control Plane)
+
+Slave/worker node
+
+Master Node or Kubernetes Control Plane
+
+The master node in a Kubernetes architecture is used to manage the states of a cluster. It is an entry point for all types of administrative tasks. In the Kubernetes cluster, more than one master node is present for checking the fault tolerance.
+
+API Server:
+
+The Kubernetes API server receives the REST commands which are sent by the user. After receiving, it validates the REST requests, process, and then executes them. After the execution of REST commands, the resulting state of a cluster is saved in 'etcd' as a distributed key-value store.
+
+Scheduler:
+
+it is a process that is responsible for assigning pods to the available worker nodes.
+
+Controller Manager:
+
+The controllers in a master node perform a task and manage the state of the cluster. In the Kubernetes, the controller manager executes the various types of controllers for handling the nodes, endpoints, etc.
+
+ETCD:
+
+It is an open-source, simple, distributed key-value storage which is used to store the cluster data.
+
+Kube-proxy:
+
+It is a proxy service of Kubernetes, which is executed simply on each worker node in the cluster. The main aim of this component is request forwarding. Each node interacts with the Kubernetes services through Kube-proxy.
+
+Pods:
+
+A pod is a combination of one or more containers which logically execute together on nodes. One worker node can easily execute multiple pods.
+
+Kubelet:
+
+This component is an agent service that executes on each worker node in a cluster. It ensures that the pods and their containers are running smoothly. Every kubelet in each worker node communicates with the master node. It also starts, stops, and maintains the containers which are organized into pods directly by the master node.
+
+What is Control Plane?
+
+The control plane manages the worker nodes and the Pods in the cluster.
+
+Write the difference between kubectl and cubelets.
+
+The kubelet vs kubeclt comparison boils down to this: kubelet is Kubernetes’s mechanism for creating containers in a worker node, while kubectl is the CLI tool that developers use for interacting with a Kubernetes cluster. If you know which piece of the Kubernetes architecture you need to interact with, the choice between kubectl and kubelet will be clear.
+
+Explain the role of the API server.
+
+API stands for “Application Programming Interface.” An API is a software intermediary that allows two applications to talk to each other.  In other words, an API is the messenger that delivers your request to the provider that you’re requesting it from and then delivers the response back to you.
+
+Thank you for reading this blog. Hope it helps.
+
+— Safia Khatoon
+
+Happy Learning :)

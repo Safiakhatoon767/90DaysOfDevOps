@@ -1,0 +1,125 @@
+What is the Difference between an Image, Container and Engine?
+An image is a read-only template with instructions for creating a Docker container. A Docker container is a running instance of an image. The image becomes a container when they run on the docker engine. Docker engine is also called a server or Docker Daemon. It is responsible for running containers to manage the docker service. The Docker engine runs on the host o.s.
+
+What is the Difference between the Docker command COPY vs ADD?
+Copy: we can't download files from the internet with the help of COPY command which is used basically in the local system.
+
+ADD: we can download files from the internet with the help of ADD command. and also extract the image with the help of ADD command.
+
+What is the Difference between the Docker command CMD vs RUN?
+RUN is an image build step, the state of the container after a RUN the command will be committed to the container image. A Dockerfile can have many RUN steps that layer on top of one another to build the image.
+
+CMD is the command the container executes by default when you launch the built image.
+
+How Will you reduce the size of the Docker image?
+There are several ways to reduce the size of a Docker image:
+
+1. Use a Smaller Base Image(Alpine)
+
+Alpine Linux is a lightweight Linux distribution that is popular for creating small Docker images. It is smaller than most other Linux distributions and has a smaller attack surface.
+
+2. Use a .dockerignore file
+
+A .dockerignore file allows you to specify files and directories that should be excluded from the build context sent to the Docker daemon. This helps to exclude unnecessary files from the build context, which in turn reduces the size of the image.
+
+3. Utilize the Multi-Stage Builds Feature in Docker
+
+It allows users to divide the Dockerfile into multiple stages. Multi-stage builds allow you to use multiple FROM statements in your Dockerfile. This allows you to use one image as a builder image and then copy only the necessary files to a smaller image.
+
+4. Avoid Adding Unnecessary Layers
+
+A Docker image takes up more space with every layer you add to it. Therefore, the more layers you have, the more space the image requires. Each RUN instruction in a Dockerfile adds a new layer to your image. Remove unnecessary files and dependencies from the image by using the RUN apt-get autoremove, RUN apt-get clean and RUN rm commands in your Dockerfile
+
+5. Use Squash
+
+Squash is a technique that allows you to combine all the layers of an image into a single layer. This can significantly reduce the size of an image.
+
+6. Use official images
+
+Official images are images that are maintained by the upstream software maintainers. These images are usually smaller in size and more secure than images built by other parties.
+
+7. Keep Application Data Elsewhere
+
+Storing application data in the image will unnecessarily increase the size of the images. It’s highly recommended to use the volume feature of the container runtimes to keep the image separate from the data.
+
+Why and when to use Docker?
+Let us understand it with a basic example.
+
+Suppose there are four developers in a team working on a single project. Meanwhile, one is having a Windows system, the second is owning a Linux system, and the third & fourth ones are working with macOS. Now, as you see, they are using distinct environments for creating a single application or software they will be required to carry on the things by their respective machines such as the installation of different libraries & files for their system, etc. And such situations, especially on an organizational or larger level, often cause numerous conflicts and problems throughout the entire software development life cycle So in that situation we use a docker container.
+
+Explain the Docker components and how they interact with each other.
+There are four components:
+
+Docker client and server: The Docker client provides a command line interface (CLI) that allows you to issue build, run, and stop application commands to a Docker daemon(server)The main purpose of the Docker Client is to provide a means to direct the pull of images from a registry and to have it run on a Docker host.
+
+Docker image :
+
+A Docker image is a template that contains instructions for the Docker container.
+
+Docker registry: Docker Registry is a centralized location for storing and distributing Docker images. The most commonly used public registry is Docker Hub, but you can also create your private registry.
+
+Docker container: A docker container is a copy of a docker image.
+
+Explain the terminology: Docker Compose, Docker File, Docker Image, Docker Container?
+Docker Compose: Docker Compose is a Docker tool used to define and run multi-container applications. With Compose, you use a YAML file to configure your application’s services and create all the app’s services from that configuration.
+
+Docker File: A Dockerfile is a simple text file that contains the commands.
+
+Docker Image: A docker image is a template of a docker container.
+
+Docker Container: A Docker Container is a template for running a docker image
+
+In what real scenarios have you used Docker?
+Suppose there are four developers in a team working on a single project. Meanwhile, one is having a Windows system, the second is owning a Linux system, and the third & fourth ones are working with macOS. Now, as you see, they are using distinct environments for creating a single application or software they will be required to carry on the things by their respective machines such as the installation of different libraries & files for their system, etc. And such situations, especially on an organizational or larger level, often cause numerous conflicts and problems throughout the entire software development life cycle So in that situation we use a docker.
+
+Docker vs Hypervisor?
+Docker and hypervisors are both technologies used to manage virtual machines and create virtual environments. Hypervisors are typically more powerful and offer more features than Docker, but Docker has a much simpler architecture and is easier to use. Hypervisors allow for more flexibility and scalability, while Docker is more suitable for applications that require a simpler, more lightweight approach.
+
+What are the advantages and disadvantages of using docker?
+The main advantages of using Docker are: - Docker is lightweight and fast, allowing for faster application deployment and scalability. - Docker containers are highly portable and can be run on any machine with Docker installed. - Docker containers are isolated from each other, allowing for secure application deployment. - Docker containers can be easily managed and monitored.
+
+The main disadvantages of using Docker are: - Docker containers are not as secure as virtual machines. - Docker containers can be difficult to debug. - Docker images can be large and take up a lot of disk space. - Docker can be difficult to set up and manage.
+
+What is a Docker namespace?
+A Docker namespace is a way to separate containers from each other, so that they can run on the same host without interfering with each other. It also provides a way to limit the resources available to a container and manage network interfaces.
+
+What is a Docker registry?
+A Docker registry is a repository for storing and distributing Docker images. It is a centralized location for storing and distributing Docker images. The most commonly used public registry is Docker Hub, but you can also create your private registry.
+
+What is an entry point?
+An entry point is a script that is executed when a container is launched. It is used to define the commands that should be executed when the container starts. It is also used to set environment variables, configure networking, and set up logging.
+
+How to implement CI/CD in Docker?
+Implementing CI/CD in Docker involves setting up a CI system to build and test the Docker image, pushing the image to a Docker registry, and using a CD system to deploy the Docker image to a production environment. The CD system can also be configured to monitor the image and take action when it changes.
+
+Will data on the container be lost when the docker container exits?
+Yes, any data stored on a Docker container will be lost when the container is stopped or exited. It is recommended to use the volume feature of the container runtimes to keep the image separate from the data.
+
+What is a Docker swarm?
+A Docker swarm is a group of Docker nodes that work together to create a cluster of containers that can be used to run applications in a distributed and fault-tolerant way.
+
+What are the docker commands for the following:
+view running containers
+
+docker ps
+
+command to run the container under a specific name
+
+The command to run a container under a specific name is `docker run --name
+
+command to export a docker
+
+command to import an already existing docker image
+
+The command to import an existing Docker image is docker load -i .
+
+commands to delete a container
+
+The command to delete a container is docker rm .
+
+command to remove all stopped containers, unused networks, build caches, and dangling images?
+
+The command to remove all stopped containers, unused networks, build caches, and dangling images is docker system prune
+
+What are the common docker practices to reduce the size of Docker Image?
+The common practices to reduce the size of a Docker image are using a smaller base image (Alpine), utilizing the multi-stage builds feature, avoiding adding unnecessary layers, using squash, using official images, and keeping application data elsewhere.

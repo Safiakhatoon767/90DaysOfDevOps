@@ -1,0 +1,69 @@
+What is Kubernetes and why it is important?
+
+Kubernetes is an open-source container orchestration platform that automates the deployment, scaling, and management of containerized applications. It is important because it simplifies the process of managing and deploying containerized applications, allowing developers to focus on writing code rather than managing infrastructure.
+
+What is the difference between docker swarm and Kubernetes?
+
+Docker Swarm and Kubernetes are both container orchestration tools, but the main difference is that Docker Swarm is simpler and easier to set up, while Kubernetes is more powerful and flexible. Docker Swarm is ideal for smaller projects, while Kubernetes is better suited for larger, more complex projects with more advanced requirements.
+
+How does Kubernetes handle network communication between containers?
+
+Kubernetes uses a networking model called Service to handle network communication between containers. Each Service is assigned a unique IP address and DNS name, which allows other containers to communicate with it using that IP address or DNS name. Kubernetes also supports different networking plugins that can be used to configure the network communication between containers.
+
+How does Kubernetes handle the scaling of applications?
+
+Kubernetes handles scaling of applications by allowing users to define the desired state of their application and automatically adjusting the number of replicas to match that state. This means that if there is an increase in traffic or demand, Kubernetes can automatically add more replicas of the application to handle the load, and if there is a decrease in traffic or demand, Kubernetes can automatically remove replicas to save resources.
+
+What is a Kubernetes Deployment and how does it differ from a ReplicaSet?
+
+A Kubernetes Deployment is a higher-level abstraction that manages ReplicaSets and provides declarative updates to Pods. It allows users to define the desired state of their application and automatically manages the creation, scaling, and updating of ReplicaSets. A ReplicaSet, on the other hand, is responsible for maintaining a specific number of replicas of a Pod.
+
+Can you explain the concept of rolling updates in Kubernetes?
+
+Rolling updates in Kubernetes is a deployment strategy that allows for updates to be made to an application with zero downtime. It works by gradually replacing old instances of the application with new ones, one at a time, until all instances have been updated. This ensures that the application remains available throughout the update process.
+
+How does Kubernetes handle network security and access control?
+
+Kubernetes handles network security and access control by providing various mechanisms such as network policies, role-based access control (RBAC), and service accounts. Network policies allow users to define rules for incoming and outgoing traffic to and from pods, while RBAC allows users to define granular permissions for accessing Kubernetes resources. Service accounts are used to provide an identity to pods and control their access to Kubernetes resources. Together, these mechanisms help ensure that network communication is secure and access to resources is restricted to authorized users.
+
+Can you give an example of how Kubernetes can be used to deploy a highly available application?
+
+Kubernetes can be used to deploy a highly available application by creating multiple replicas of the application and distributing them across different nodes in the cluster. This ensures that even if one node fails, the application can still be accessed from other nodes, providing high availability.
+
+What is namespace is kubernetes? Which namespace any pod takes if we don't specify any namespace?
+
+A namespace in Kubernetes is a way to organize and isolate resources within a cluster. If a namespace is not specified for a pod, it will be created in the default namespace.
+
+How ingress helps in kubernetes?
+
+In Kubernetes, Ingress helps to expose HTTP and HTTPS routes from outside the cluster to services within the cluster.
+
+11.Explain different types of services in kubernetes?
+
+There are four types of services in Kubernetes:1. ClusterIP: Exposes the service on a cluster-internal IP address. 2. NodePort: Exposes the service on each Node’s IP address at a static port. 3. LoadBalancer: Exposes the service externally using a cloud provider’s load balancer. 4. ExternalName: Maps the service to the contents of the externalName field (e.g. foo.bar.example.com).
+
+Can you explain the concept of self-healing in Kubernetes and give examples of how it works?
+
+Self-healing in Kubernetes refers to the ability of the platform to automatically detect and recover from failures or issues within the cluster. This is achieved through various mechanisms such as liveness and readiness probes, which continuously monitor the health of containers and pods, and automatic scaling, which adjusts the number of replicas based on resource utilization. For example, if a pod fails a liveness probe, Kubernetes will automatically restart the pod to restore it to a healthy state. Similarly, if there is an increase in traffic, Kubernetes can automatically add more replicas to handle the load.
+
+How does Kubernetes handle storage management for containers?
+
+Kubernetes handles storage management for containers by providing a way to attach and mount storage volumes to containers. This allows containers to access persistent data even if they are destroyed or recreated. Kubernetes supports different types of storage volumes such as local storage, network storage, and cloud storage, and provides mechanisms for managing the lifecycle of storage volumes.
+
+How does the NodePort service work?
+
+The NodePort service in Kubernetes exposes the service on each Node's IP address at a static port. This allows external traffic to reach the service by accessing the Node's IP address and the static port number.
+
+What is a multinode cluster and single-node cluster in Kubernetes?
+
+A single-node cluster in Kubernetes is a cluster that consists of only one node, while a multi-node cluster consists of multiple nodes. In a single-node cluster, all the components of Kubernetes run on a single machine, while in a multi-node cluster, the components are distributed across multiple machines.
+
+Difference between create and apply in kubernetes?
+
+The main difference between kubectl create and kubectl apply in Kubernetes is that create creates a new resource every time it is run, while apply updates an existing resource if it already exists or creates a new one if it does not exist. In other words, create is used to create new resources, while apply is used to update or create resources based on the configuration file provided.
+
+Thank you for reading this blog. Hope it helps.
+
+— Safia Khatoon
+
+Happy Learning :)
